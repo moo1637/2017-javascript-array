@@ -2,9 +2,21 @@
 <html>
 <head>
     <script type="text/javascript">
-        function check_string() {
+        function check_string(str) {
           // TODO : 여기에 여러분이 직접 코딩을 해주세요.          
-          return true;
+		chkOpen = 0;
+		chkClose = 0;
+
+		for(i=0; i< str.length; i++) {
+			if(str.charAt(i) == '(')
+				chkOpen += 1;
+			else
+				chkClose += 1;
+		}
+		if(chkOpen == chkClose)
+          		return true;
+		else
+			return false;
         }
 
         expect(check_string('(())())'), false);
